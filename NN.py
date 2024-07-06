@@ -7,20 +7,6 @@ from scipy import stats
 import random
 np.random.seed(0)
 
-def printnetwork(layers):
-    print('\nNEW')
-
-    for layer in layers:
-        #print(type(layer).__name__)
-        if type(layer).__name__ == "FCLayer":
-            print("weights")
-            print(layer.weights)
-        if type(layer).__name__ == "ActivationLayer":
-            print("neuron")
-            print(layer.neuron)
-            
-
-
 # Base class
 class Layer:
     def __init__(self):
@@ -98,7 +84,6 @@ class ActivationLayer(Layer):
        # print(f"\nbackprop activation layer")
         return self.activation_prime(self.input) * output_error
     
-
 class Network:
     def __init__(self):
         self.layers = []
